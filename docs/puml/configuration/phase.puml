@@ -1,0 +1,57 @@
+@startuml
+' Define the style
+skinparam class {
+    BackgroundColor PaleGreen
+    ArrowColor SeaGreen
+    BorderColor Black
+}
+
+' Define classes representing configuration files
+class MainConfig {
+    +config.yaml
+}
+
+class DatabaseConfig {
+    +dbconfig.yaml
+}
+
+class APIConfig {
+    +apiconfig.yaml
+}
+
+class LoggingConfig {
+    +logconfig.yaml
+}
+
+' Define phases
+package "Build Phase" {
+    class BuildScript {
+        +build.gradle
+    }
+}
+
+package "Deploy Phase" {
+    class DeployScript {
+        +deploy.sh
+    }
+}
+
+package "Runtime Phase" {
+    class RuntimeEnvironment {
+        +runtime.env
+    }
+}
+
+' Define relationships
+MainConfig --> DatabaseConfig : includes
+MainConfig --> APIConfig : includes
+MainConfig --> LoggingConfig : includes
+
+BuildScript --> MainConfig : uses
+DeployScript --> MainConfig : uses
+RuntimeEnvironment --> MainConfig : uses
+RuntimeEnvironment --> DatabaseConfig : uses
+RuntimeEnvironment --> APIConfig : uses
+RuntimeEnvironment --> LoggingConfig : uses
+
+@enduml

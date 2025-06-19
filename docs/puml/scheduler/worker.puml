@@ -1,0 +1,38 @@
+@startuml worker
+participant Scheduler
+participant Executor
+participant Worker
+
+activate Scheduler
+Scheduler -> Executor: Schedule tasks
+activate Executor
+Executor -> Worker: Assign task
+activate Worker
+Worker -> Executor: Execute task
+Executor -> Worker: Send task status
+Executor -> Worker: Send logs
+Executor -> Worker: Send metrics
+Executor -> Worker: Send heartbeat
+Worker -> Executor: Task finished
+deactivate Worker
+Executor -> Scheduler: Task execution result
+Scheduler -> Scheduler: Update task status
+deactivate Executor
+Scheduler -> Scheduler: Check for DAG triggers
+activate Executor
+Scheduler -> Executor: Trigger DAG
+deactivate Scheduler
+activate Executor
+Executor -> Worker: Assign task
+activate Worker
+Worker -> Executor: Execute task
+Executor -> Worker: Send task status
+Executor -> Worker: Send logs
+Executor -> Worker: Send metrics
+Executor -> Worker: Send heartbeat
+Worker -> Executor: Task finished
+deactivate Worker
+Executor -> Scheduler: Task execution result
+Scheduler -> Scheduler: Update task status
+deactivate Executor
+@enduml

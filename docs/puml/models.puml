@@ -1,0 +1,271 @@
+@startuml home.models
+!pragma useIntermediatePackages false
+
+class home.models.DM_ALLOCATION_SAVING_MAX_RATIO.DmAllocationSavingMaxRatio {
+}
+class home.models.DM_BP_NEGO_CHIP_ANAL_RESULT.DmBpNegoChipAnalResult {
+}
+class home.models.DM_BUNDLE_DEAL_CAL.DmBundleDealCal {
+}
+class home.models.DM_CRITICAL_MTRL_INFO_RPT.DmCriticalMtrlInfoRpt {
+}
+class home.models.DM_CRITICAL_RAW_MTRL_INFO.DmCriticalRawMtrlInfo {
+}
+class home.models.DM_CRITICAL_RAW_MTRL_INFO_RPT.DmCriticalRawMtrlInfoRpt {
+}
+class home.models.DM_CURRENT_STOCK.DmCurrentStock {
+}
+class home.models.DM_DATA_INTEGRITY_CHECK_REPORT.DmDataIntegrityCheckReport {
+}
+class home.models.DM_DEMAND_SUPPLY_REPORT.DmDemandSupplyReport {
+}
+class home.models.DM_EOL_DATA.DmEolData {
+}
+class home.models.DM_EVENT_MASTER_RECORD.DmEventMasterRecord {
+}
+class home.models.DM_FCST_SAVING_PERFORMANCE.DmFcstSavingPerformance {
+}
+class home.models.DM_HIS_SAVING_PERFORMANCE.DmHisSavingPerformance {
+}
+class home.models.DM_HIS_YEAR_PURCHASING_AMT.DmHisYearPurchasingAmt {
+}
+class home.models.DM_HOMEPAGE_KPI_INIT.DmHomepageKpiInit {
+}
+class home.models.DM_OPPORTUNITY_COST_ANALYSIS.DmOpportunityCostAnalysis {
+}
+class home.models.DM_PROCUREMENT_STRATEGY_RPT.DmProcurementStrategyRpt {
+}
+class home.models.DM_PURCHASE_AMOUNT_RECORDS.DmPurchaseAmountRecords {
+}
+class home.models.DM_RAW_MATERIAL_IMPACT_RPT.DmRawMaterialImpactRpt {
+}
+class home.models.DM_RAW_MATERIAL_PRICE_INDEX.DmRawMaterialPriceIndex {
+}
+class home.models.DM_RMP_PURCHASING_AMOUNT.DmRmpPurchasingAmount {
+}
+class home.models.DM_RMP_SAVING_PERFORMANCE.DmRmpSavingPerformance {
+}
+class home.models.DM_ROLL_NEGO_CHIP_ANAL_RESULT.DmRollNegoChipAnalResult {
+}
+class home.models.DM_SECOND_RLS_REC_BEEF.DmSecondRlsRecBeef {
+}
+class home.models.DM_SIMULATION_REPORT.DmSimulationReport {
+}
+class home.models.DM_SUPPLIER_CAPACITY_ANALYSIS.DmSupplierCapacityAnalysis {
+}
+class home.models.DM_YEARLY_PURCHASING_AMOUNT.DmYearlyPurchasingAmount {
+}
+class home.models.INT_ALLOCATION.IntAllocation {
+}
+class home.models.INT_AUTH_GROUP.IntAuthGroup {
+}
+class home.models.INT_AUTH_GROUP_PERMISSIONS.IntAuthGroupPermissions {
+}
+class home.models.INT_AUTH_PERMISSION.IntAuthPermission {
+}
+class home.models.INT_AUTH_USER.IntAuthUser {
+}
+class home.models.INT_AUTH_USER_GROUPS.IntAuthUserGroups {
+}
+class home.models.INT_AUTH_USER_USER_PERMISSIONS.IntAuthUserUserPermissions {
+}
+class home.models.INT_BASELINE_DEMAND_ESTIMATE.IntBaselineDemandEstimate {
+}
+class home.models.INT_BP_MANAGEMENT_BUYER_STEP1.IntBpManagementBuyerStep1 {
+}
+class home.models.INT_BP_MANAGEMENT_BUYER_STEP3.IntBpManagementBuyerStep3 {
+}
+class home.models.INT_BP_PROGRESS_SPARE_PARTS.IntBpProgressSpareParts {
+}
+class home.models.INT_BP_VERSION_CONFIRM.IntBpVersionConfirm {
+}
+class home.models.INT_BUYER_ENTRY_PAGE.IntBuyerEntryPage {
+}
+class home.models.INT_CHANGE_IN_DEMAND_FCST.IntChangeInDemandFcst {
+}
+class home.models.INT_CHANGE_IN_DEMAND_FCST_LST.IntChangeInDemandFcstLst {
+}
+class home.models.INT_CRITICAL_MTRL_INFO_RPT.IntCriticalMtrlInfoRpt {
+}
+class home.models.INT_CRITICAL_RAW_MTRL_INFO.IntCriticalRawMtrlInfo {
+}
+class home.models.INT_CRITICAL_RAW_MTRL_INFO_RPT.IntCriticalRawMtrlInfoRpt {
+}
+class home.models.INT_DECISION_TREE.IntDecisionTree {
+}
+class home.models.INT_DEMAND_FCST_IN_MONTH.IntDemandFcstInMonth {
+}
+class home.models.INT_DEMAND_SUPPLY_REPORT_LST.IntDemandSupplyReportLst {
+}
+class home.models.INT_EOL_DATA.IntEolData {
+}
+class home.models.INT_EOL_DATA_LST.IntEolDataLst {
+}
+class home.models.INT_EVENT_MASTER_RECORD.IntEventMasterRecord {
+}
+class home.models.INT_EVENT_MASTER_RECORD_LST.IntEventMasterRecordLst {
+}
+class home.models.INT_FCST_INFORMATION.IntFcstInformation {
+}
+class home.models.INT_FCST_PRICE_MAINT_SIMU_PERF.IntFcstPriceMaintSimuPerf {
+}
+class home.models.INT_FCST_PRICE_MAINTAIN_IDM.IntFcstPriceMaintainIdm {
+}
+class home.models.INT_FCST_VERSION.IntFcstVersion {
+}
+class home.models.INT_FCST_VERSION_CONFIRM.IntFcstVersionConfirm {
+}
+class home.models.INT_MATERIAL_MAPPING.IntMaterialMapping {
+}
+class home.models.INT_NEGOTIATION_CHIP_ANALYSIS.IntNegotiationChipAnalysis {
+}
+class home.models.INT_NOTIFICATION.IntNotification {
+}
+class home.models.INT_NOTIFICATION_CNT.IntNotificationCnt {
+}
+class home.models.INT_OP_ROLLING_FCST_INFO.IntOpRollingFcstInfo {
+}
+class home.models.INT_PART_BUYER_RELATIONSHIP.IntPartBuyerRelationship {
+}
+class home.models.INT_PROC_STRAT_PLAN_FRM.IntProcStratPlanFrm {
+}
+class home.models.INT_PROC_STRAT_PLAN_LST.IntProcStratPlanLst {
+}
+class home.models.INT_PROC_STRAT_PLANNING.IntProcStratPlanning {
+}
+class home.models.INT_PROC_STRAT_PLANNING_SIM.IntProcStratPlanningSim {
+}
+class home.models.INT_PROCUREMENT_STRATEGY_RPT.IntProcurementStrategyRpt {
+}
+class home.models.INT_PROJECT_DETAIL.IntProjectDetail {
+}
+class home.models.INT_PROPOSAL_DETAIL.IntProposalDetail {
+}
+class home.models.INT_PROPOSAL_PROJECT_HEADER.IntProposalProjectHeader {
+}
+class home.models.INT_RAW_MATERIAL_IMPACT_RPT.IntRawMaterialImpactRpt {
+}
+class home.models.INT_RAW_MATERIAL_MASTER_DATA.IntRawMaterialMasterData {
+}
+class home.models.INT_SIMU_PERFOR_PROCESS.IntSimuPerforProcess {
+}
+class home.models.INT_SIMULATION_CONSTRAINT.IntSimulationConstraint {
+}
+class home.models.INT_SIMULATION_MASTER_DATA.IntSimulationMasterData {
+}
+class home.models.INT_SIMULATION_MST_CSTR.IntSimulationMstCstr {
+}
+class home.models.INT_SIMULATION_MST_DT_FRM.IntSimulationMstDtFrm {
+}
+class home.models.INT_SIMULATION_MST_DT_LST.IntSimulationMstDtLst {
+}
+class home.models.INT_SIMULATION_PROCESS_MD.IntSimulationProcessMd {
+}
+class home.models.INT_SIMULATION_PROPOSAL.IntSimulationProposal {
+}
+class home.models.INT_SIMULATION_PROPOSAL_FRM.IntSimulationProposalFrm {
+}
+class home.models.INT_SIMULATION_PROPOSAL_LST.IntSimulationProposalLst {
+}
+class home.models.INT_SOURCE_MASTER_DATA.IntSourceMasterData {
+}
+class home.models.INT_SUPPLIER_CAPACITY_ANALYSIS.IntSupplierCapacityAnalysis {
+}
+class home.models.INT_TO_DO_CONTENT.IntToDoContent {
+}
+class home.models.INT_VENDOR_BY_BUYER.IntVendorByBuyer {
+}
+class home.models.INT_VENDOR_BY_BUYER_DETAIL.IntVendorByBuyerDetail {
+}
+class home.models.INT_VENDOR_BY_BUYER_SUMMARY.IntVendorByBuyerSummary {
+}
+class home.models.INT_VENDOR_RISK_MANAGEMENT.IntVendorRiskManagement {
+}
+class home.models.INT_VENDOR_SURVEY_LIST.IntVendorSurveyList {
+}
+class home.models.SRC_ALLOCATION.SrcAllocation {
+}
+class home.models.SrcAllocationExtend.SrcAllocationExtend {
+}
+class home.models.SRC_AVAILABLE_DOWNLOAD_DATA.SrcAvailableDownloadData {
+}
+class home.models.SRC_BASELINE_VERSION.SrcBaselineVersion {
+}
+class home.models.SRC_BUYER_ENTRY_PAGE.SrcBuyerEntryPage {
+}
+class home.models.SrcBuyerEntryPageExtend.SrcBuyerEntryPageExtend {
+}
+class home.models.SRC_CHANGE_IN_DEMAND_FCST.SrcChangeInDemandFcst {
+}
+class home.models.SRC_DEFAULT_QUOTE_CHANGE.SrcDefaultQuoteChange {
+}
+class home.models.SRC_DEMAND_FCST_IN_MONTH.SrcDemandFcstInMonth {
+}
+class home.models.SRC_EOL_DATA.SrcEolData {
+}
+class home.models.SRC_EVENT_MASTER_RECORD.SrcEventMasterRecord {
+}
+class home.models.SRC_FCST_PRICE.SrcFcstPrice {
+}
+class home.models.SrcFcstPriceExtend.SrcFcstPriceExtend {
+}
+class home.models.SRC_FCST_VERSION_HEADER.SrcFcstVersionHeader {
+}
+class home.models.SRC_FCST_VERSION_LINE.SrcFcstVersionLine {
+}
+class home.models.SRC_MATERIAL_MAPPING.SrcMaterialMapping {
+}
+class home.models.SrcMaterialMappingExtend.SrcMaterialMappingExtend {
+}
+class home.models.SRC_NEGOTIATION_CHIP_ANALYSIS.SrcNegotiationChipAnalysis {
+}
+class home.models.SRC_OS_EVENT_MASTER_DATA.SrcOsEventMasterData {
+}
+class home.models.SrcOsOpView.SrcOsOpView {
+}
+class home.models.SRC_PROC_STRAT_PLANNING.SrcProcStratPlanning {
+}
+class home.models.SRC_PROC_STRAT_PLANNING_SIM.SrcProcStratPlanningSim {
+}
+class home.models.SRC_RAW_MATERIAL_MASTER_DATA.SrcRawMaterialMasterData {
+}
+class home.models.SRC_SIMULATION_CONSTRAINT.SrcSimulationConstraint {
+}
+class home.models.SRC_SIMULATION_MASTER_DATA.SrcSimulationMasterData {
+}
+class home.models.SRC_SIMULATION_PERFORMANCE.SrcSimulationPerformance {
+}
+class home.models.SRC_SIMULATION_PROCESS.SrcSimulationProcess {
+}
+class home.models.SRC_SIMULATION_PROPOSAL.SrcSimulationProposal {
+}
+class home.models.SRC_SUPPLIER_CAPACITY_ANALYSIS.SrcSupplierCapacityAnalysis {
+}
+class home.models.SRC_UPLOAD_DATA.SrcUploadData {
+}
+class home.models.SRC_URL_PATH.SrcUrlPath {
+}
+class home.models.SRC_VENDOR_BY_BUYER_VERSION.SrcVendorByBuyerVersion {
+}
+class home.models.SRC_VENDOR_SURVEY_LIST.SrcVendorSurveyList {
+}
+class home.models.INT_BP_MANAGEMENT.IntBpManagement {
+}
+class home.models.INT_DEMAND_SUPPLY_REPORT.IntDemandSupplyReport {
+}
+class home.models.INT_PROC_STRAT_PLANNING_REF.IntProcStratPlanningRef {
+}
+class home.models.INT_RMP_PURCHASING_AMOUNT.IntRmpPurchasingAmount {
+}
+class home.models.INT_RMP_SAVING_PERFORMANCE.IntRmpSavingPerformance {
+}
+class home.models.SRC_DEMAND_SUPPLY_REPORT.SrcDemandSupplyReport {
+}
+home.models.SRC_ALLOCATION.SrcAllocation <|-- home.models.SrcAllocationExtend.SrcAllocationExtend
+home.models.SRC_DEFAULT_QUOTE_CHANGE.SrcDefaultQuoteChange <|-- home.models.SrcBuyerEntryPageExtend.SrcBuyerEntryPageExtend
+home.models.SRC_FCST_PRICE.SrcFcstPrice <|-- home.models.SrcFcstPriceExtend.SrcFcstPriceExtend
+home.models.SRC_MATERIAL_MAPPING.SrcMaterialMapping <|-- home.models.SrcMaterialMappingExtend.SrcMaterialMappingExtend
+footer Generated by //py2puml//
+@enduml
+
+Successfully generated UML diagram for app "home.models".

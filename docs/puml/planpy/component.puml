@@ -1,0 +1,39 @@
+' press Alt + D to view
+
+@startuml DEA2ODS Component
+
+component "XMLGenerator" {
+    [Category]
+    [Physical Job]
+    [Abstract Job]
+    [Step]
+    [SqlScript]
+    [ReaderWriter]
+}
+
+component "SQLGenerator" {
+    [GenDDL]
+    [GenSQL]
+    [SFTPService]
+}
+component "DBConnector"{
+    [OracleConnector]
+}
+
+component "Trinity Resource"
+component "DI"
+
+
+Category --> [Trinity Resource]
+Category --> DI
+Category --> [Physical Job]
+[Physical Job]  ..|> [Abstract Job] 
+[Physical Job] --> Step
+Step --> ReaderWriter
+Step --> SqlScript
+ReaderWriter --> OracleConnector
+GenDDL --> OracleConnector
+GenSQL --> OracleConnector
+
+
+@enduml

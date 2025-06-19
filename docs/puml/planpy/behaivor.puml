@@ -1,0 +1,25 @@
+' press Alt + D to view
+
+@startuml DEA2ODS Behaivor
+
+
+User ->  PlanPy: gen_jobs(tables)
+activate PlanPy
+loop for each table
+    PlanPy -> DEADB: get_table_meta(table)
+    DEADB -> PlanPy: return table_meta
+    PlanPy -> SQLGenerator: gen_sql(table_meta)
+    activate SQLGenerator
+    SQLGenerator -> ODSA: sftp sql / ddl
+    deactivate SQLGenerator
+    PlanPy -> XMLGenerator: gen_xml(table_meta, sql)
+    activate XMLGenerator
+    XMLGenerator -> PlanPy: return xml
+    deactivate XMLGenerator
+end loop
+PlanPy -> User: return trinity jobs
+deactivate PlanPy
+User -> Trinity: import trinity jobs
+
+
+@enduml

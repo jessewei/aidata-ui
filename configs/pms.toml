@@ -1,0 +1,26 @@
+[pms]
+hr_perday = 1
+application=['github', 'excel']
+# [github,gitlab,gsheet,excel,sharepoint,bitbucket,redmine,  ]
+log_dir='01_PM/0101_Backlog/' 
+
+[pms.logging]
+level = "DEBUG"
+format1 = "[%(asctime)s] {%(filename)s=%(lineno)d} %(levelname)s - %(message)s"
+
+[[pms.issues]]
+driver='github'
+addr='https=//github.ibm.com/api/v3'
+token='xxxooo'
+prj_id='jessewei/umc_os_dt'
+keycode='GIT'
+tgt_file='UMC-GIT.xlsx'
+row_per_page=500
+map_columns={'Category'= '$GIT', 'Story'= 'title', 'Solution/Confirmation'= 'body', 'Status'= 'state', 'Stakeholder'= 'user.login', 'Owner'= 'assignee.login', 'Request DT'= 'created_at', 'PlanIn DT'= 'created_at', 'Planned DT'= 'updated_at', 'Completed DT'= 'closed_at', 'Comment'= 'label_str', 'GTD'= '', 'Remain HR'= '$3', 'Ideal HR'= '$3', 'Story Point'= '$1', 'Priority'= 'Priority', 'LogType'= '', 'ReqTeam'= '', 'ownModule'= '', 'logKey'= 'number', 'reportID'= '', 'isRTC'= '', 'rptName'= '', 'defaultTeam'= '', 'Remark'= '$N/A'}
+map_name={'May-Cheng'='May', 'Jimmy-CY-Wang'='Jimmy', 'jessewei'='Jesse', 'jerryky'='Jerry', 'Peter-SW-Ma'='Peter', 'Yi-Tseng-Li'='Terry', 'amy-lu1'='Amy', 'WEICHIH-FANG'='Frank', 'hychen'='Hsuan', 'Ed-LE-Ko'='Ed', 'Allen-YW-Chiang'='Allen', 'LIU-YI-HONG'='Jason', 'Vivien-Lin'='Vivien', 'Ivory-Wang'='Ivory', 'andywu-ibm'='Andy', 'Gary-Takashi-Chen'= 'Gary', '-'= 'Jesse'}
+map_state={    'closed'= 'Completed',    'open'= 'Process',    'opened'= 'Process',    '-'= 'Process'}
+map_priority={}
+map_log_type={}
+
+[[pms.issues]]
+driver='excel'

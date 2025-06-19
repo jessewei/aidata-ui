@@ -1,0 +1,69 @@
+@startuml
+' Define the style
+skinparam component {
+    BackgroundColor LightBlue
+    BorderColor Black
+}
+
+left to right direction
+
+' Define actors
+actor "Developer" as developer
+actor "Admin" as admin
+
+' Define main components
+component "Nginx" as nginx
+component "Gunicorn" as gunicorn
+component "Django" as django
+
+' Define configuration files with links
+package "Nginx Config" as nginx_config {
+    component "nginx.conf" {
+    [upstream django_webapp: \n django-webapp] 
+    [location: \n http://django_webapp]
+    }
+}
+
+package "Gunicorn Config" as gunicorn_config {
+    component "gunicorn.conf.py"
+}
+
+package "Django Settings" as django_settings {
+    component "settings.py" {
+        [core.wsgi]
+    }
+}
+
+package "Dockerfile" as dockerfile {
+    component "Dockerfile" {
+        [ENTRYPOINT: \n entrypoint.sh]
+        [entrypoint.sh: \n core.wsgi]
+    }
+}
+
+package "Docker-Compose.yaml" as env_vars {
+    component "services" {
+    [container_name: \n django-webapp]
+    [container_name: \n nginx-webapp-proxy]
+    }
+}
+
+' Define relationships
+developer --> django_settings
+developer --> gunicorn_config
+developer --> dockerfile
+admin --> django_settings
+admin --> gunicorn_config
+admin --> nginx_config
+admin --> env_vars
+
+nginx_config --> nginx : Configure
+gunicorn_config --> gunicorn : Configure
+django_settings --> django : Configure
+dockerfile --> nginx : Build
+dockerfile --> gunicorn : Build
+dockerfile --> django : Build
+env_vars --> django : Runtime Configuration
+env_vars --> gunicorn : Runtime Configuration
+env_vars --> nginx : Runtime Configuration
+@enduml

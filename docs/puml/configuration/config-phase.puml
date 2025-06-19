@@ -1,0 +1,59 @@
+@startuml
+' Define the style
+skinparam component {
+    BackgroundColor LightBlue
+    BorderColor Black
+}
+
+left to right direction
+
+' Define the actors
+actor "Developer" as developer
+actor "Admin" as admin
+
+' Define the packages for different phases
+package "Development Phase" as dev_phase {
+    component "Django Settings (dev)" as django_settings_dev
+    component "Gunicorn Config (dev)" as gunicorn_config_dev
+}
+
+package "Build Phase" as build_phase {
+    component "Dockerfile" as dockerfile
+}
+
+package "Deploy Phase" as deploy_phase {
+    component "Nginx Config" as nginx_config
+    component "Gunicorn Config (prod)" as gunicorn_config_prod
+}
+
+package "Runtime Phase" as runtime_phase {
+    component "Django Settings (prod)" as django_settings_prod
+    component "Environment Variables" as env_vars
+}
+
+' Define the main components
+component "Nginx" as nginx
+component "Gunicorn" as gunicorn
+component "Django" as django
+
+' Define relationships
+developer --> django_settings_dev
+developer --> gunicorn_config_dev
+developer --> dockerfile
+admin --> django_settings_prod
+admin --> gunicorn_config_prod
+admin --> nginx_config
+admin --> env_vars
+
+django_settings_dev --> django : Configure
+gunicorn_config_dev --> gunicorn : Configure
+django_settings_prod --> django : Configure
+gunicorn_config_prod --> gunicorn : Configure
+nginx_config --> nginx : Configure
+dockerfile --> nginx : Build
+dockerfile --> gunicorn : Build
+dockerfile --> django : Build
+env_vars --> django : Runtime Configuration
+env_vars --> gunicorn : Runtime Configuration
+env_vars --> nginx : Runtime Configuration
+@enduml

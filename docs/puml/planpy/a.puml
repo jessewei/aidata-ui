@@ -1,0 +1,39 @@
+' press Alt + D to view
+
+@startuml PlanPy
+
+component "SQLG" {
+    [_GET_SYS_INFO]
+    [_GET_TABLE_SUMMARY]
+    [_GET_TABLE_DETAIL]
+}
+
+
+component "InputSQLG" {
+    [_SQL]
+    [_DDL]
+    [_Header]
+    [_CreateQuery]
+    [_SelectQuery]
+    [_Comments]
+    [_PostQuerySQL]
+    [_PostQueryDDL]
+}
+
+component "OutputSQLG" {
+    [_Header]
+    [_Query]
+    [_PK]
+    [_Comments]
+    [_Tail]
+}
+
+component "Table2TableSQLG"{
+}
+
+
+component "DBConnector"
+component "Data"
+
+
+@enduml

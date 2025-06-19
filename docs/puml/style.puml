@@ -1,0 +1,15 @@
+@startuml style class
+class OdpStart
+
+Django -- OdpStart : base >
+Django o-- bootstrap : django-bootstrap5 >
+Django o-- app : template 
+app o-- bootstrap : django-bootstrap5 >
+OdpStart o-- bootstrap : UI component >
+OdpStart *-- UI_MENU : < UI control
+UI_MENU *-- bootstrap
+Django *-- Plotly_Dash: < Django-Plotly-Dash
+Django *-- iommi: < Django-iommi
+Plotly_Dash *-- bootstrap: dash-bootstrap-component >
+iommi *-- bootstrap: style-class >
+@enduml

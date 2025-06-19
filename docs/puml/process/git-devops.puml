@@ -1,0 +1,58 @@
+@startuml
+|#white|Developer|
+|#lightblue|Git|
+|#lightgreen|Reviewer|
+
+start
+
+|Developer|
+:Create a new feature branch from develop;
+note right: git checkout -b feature/xxx develop
+
+:Commit changes to the feature branch;
+note right: git add .\ngit commit -m "Add new feature"
+
+:Push the feature branch to remote;
+note right: git push origin feature/xxx
+
+|Git|
+:Create a Pull Request (PR) from feature/xxx to develop;
+
+|Reviewer|
+:Review the Pull Request;
+
+if (Approved?) then (Yes)
+  |Git|
+  :Merge the Pull Request into develop;
+  note right: git checkout develop\ngit merge feature/xxx
+else (No)
+  |Developer|
+  :Make necessary changes and push again;
+  note right: git add .\ngit commit -m "Fix issues"\ngit push origin feature/xxx
+  |Reviewer|
+  :Review the Pull Request again;
+endif
+
+|Git|
+:Delete the feature branch;
+note right: git branch -d feature/xxx
+
+:Create a Pull Request (PR) from develop to main;
+
+|Reviewer|
+:Review the Pull Request;
+
+if (Approved?) then (Yes)
+  |Git|
+  :Merge the Pull Request into main;
+  note right: git checkout main\ngit merge develop
+else (No)
+  |Developer|
+  :Make necessary changes and push again;
+  note right: git add .\ngit commit -m "Fix issues"\ngit push origin develop
+  |Reviewer|
+  :Review the Pull Request again;
+endif
+
+stop
+@enduml
