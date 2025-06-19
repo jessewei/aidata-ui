@@ -13,8 +13,9 @@ Modules:
 
 import logging
 import logging.handlers
-
 from pathlib import Path
+from typing import Optional
+
 from ailib.cfg_lib import cfg_apps
 
 # Default log settings
@@ -25,7 +26,10 @@ DEF_LOG_FILENAME = "app_default.log"
 
 
 def setup_logger(
-    name: str = None, level: str = None, format: str = None, base_log_folder: str = None
+    name: Optional[str] = None,
+    level: Optional[str] = None,
+    format: Optional[str] = None,
+    base_log_folder: Optional[str] = None,
 ) -> logging.Logger:
     """Setup logger for a package
 
@@ -98,7 +102,7 @@ def setup_logger(
     return logger
 
 
-def log_flow(logger_name: str = None):
+def log_flow(logger_name: Optional[str] = None):
     """Decorator to log function flow
 
     Args:
