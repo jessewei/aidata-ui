@@ -31,7 +31,7 @@ class InterceptHandler(logging.Handler):
 
         # Find caller from where originated the logged message
         frame, depth = logging.currentframe(), 2
-        while frame.f_code.co_filename == logging.__file__:
+        while frame and frame.f_code.co_filename == logging.__file__:
             frame = frame.f_back
             depth += 1
 
@@ -52,7 +52,7 @@ def format_record(record: dict) -> str:
     >>>                      {'age': 27, 'is_active': True, 'name': 'Alex'}]}]
     """
 
-    format_string = LOGURU_FORMAT
+    format_string = str(LOGURU_FORMAT)
     if record["extra"].get("payload") is not None:
         record["extra"]["payload"] = pformat(
             record["extra"]["payload"], indent=4, compact=True, width=88
@@ -97,6 +97,15 @@ def init_logging():
     logging.getLogger("uvicorn").handlers = [intercept_handler]
 
     # set logs output, level and format
+    # logger.configure(
+    #     handlers=[{"sink": sys.stdout, "level": logging.DEBUG, "format": format_record}]
+    # )
     logger.configure(
-        handlers=[{"sink": sys.stdout, "level": logging.DEBUG, "format": format_record}]
+        handlers=[
+            {
+                "sink": sys.stdout,
+                "level": logging.DEBUG,
+                "format": format_record,
+            }  # type: ignore
+        ]
     )
