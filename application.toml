@@ -1,0 +1,38 @@
+[project]
+name='aidata'
+prj_dir='C:/Proj/aidata/'
+
+[application]
+version = "0.0.1"
+description = "aidata, AI Data Platform Library"
+list=['logging','pytest','toml','aidata']
+
+
+[[application.include]]
+name='aidata'
+cfg_filename=['configs/aidata.toml',]   
+
+[logging]
+level = "DEBUG"
+format = "[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s"
+format1 = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+base_log_folder="logs"
+log_filename_template="{__package__}.log"
+log_filename_template1="{{ package }}/{{ ts }}.log"
+filename = "app_default.log"
+rotation = "10MB"
+
+[logging.dev]
+level = "DEBUG"
+
+[logging.prod]
+level = "ERROR"
+
+[logging.file]
+enabled = true
+path = "app.log"
+file_level = "INFO"
+
+[logging.console]
+enabled = true
+console_level = "DEBUG"

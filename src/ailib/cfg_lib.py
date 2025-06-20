@@ -2,8 +2,9 @@
 
 Modules:
     Description: Configuration module for odplib
-    Last update: Jesse Wei, 2025/02/13
+    Last update: Jesse Wei, 2025/06/20
     Depenedencies: toml, pathlib, dotenv
+    merge_toml_includes: Merge included TOML files into the main configuration
     cfg_apps: Configuration from application.toml
 """
 

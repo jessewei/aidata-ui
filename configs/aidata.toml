@@ -3,5 +3,5 @@ application="Hello"
 
 [odplib.logging]
 level = "DEBUG"
-format = "ODPLIB - %(message)s"
+format = "AIDATA - %(message)s"
 base_log_folder = '.'

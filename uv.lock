@@ -9,12 +9,14 @@ source = { editable = "." }
 dependencies = [
     { name = "loguru" },
     { name = "mininterface", extra = ["all"] },
+    { name = "toml" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "mininterface", extras = ["all"], specifier = ">=1.0.3" },
+    { name = "toml", specifier = ">=0.10.2" },
 ]
 
 [[package]]
@@ -597,6 +599,15 @@ name = "tkscrollableframe"
 version = "2.2"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/e2/b6/7185ffdb65079b0593a1ece1f74a83d9cbdd05db07e479cea31848a1da9e/tkscrollableframe-2.2.tar.gz", hash = "sha256:315f97c2ef2c310a05401613fc4bef27db3479b97e0e93806058094e07a2d06a", size = 7329, upload-time = "2024-03-28T20:21:38.574Z" }
+
+[[package]]
+name = "toml"
+version = "0.10.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f", size = 22253, upload-time = "2020-11-01T01:40:22.204Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b", size = 16588, upload-time = "2020-11-01T01:40:20.672Z" },
+]
 
 [[package]]
 name = "typeguard"

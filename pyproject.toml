@@ -10,8 +10,14 @@ requires-python = ">=3.13"
 dependencies = [
     "loguru>=0.7.3",
     "mininterface[all]>=1.0.3",
+    "toml>=0.10.2",
 ]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+
+[project.scripts]
+hi = "ailib.ailib:main"
+ut = "ut:main"

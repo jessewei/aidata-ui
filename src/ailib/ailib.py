@@ -9,8 +9,8 @@ Modules:
 """
 
 import os
-from odplib.cfg_lib import cfg_apps
-from odplib import log_config
+from ailib.cfg_lib import cfg_apps
+from ailib import logger
 
 
 def is_in_container():
@@ -52,7 +52,7 @@ class AiDataApp:
         level = self.app_log_cfg.get("level", None)
         format = self.app_log_cfg.get("format", None)
         base_log_folder = self.app_log_cfg.get("base_log_folder", None)
-        self.logger = log_config.setup_logger(name, level, format, base_log_folder)
+        self.logger = logger.setup_logger(name, level, format, base_log_folder)
         self.logger.debug(f"ODPLIB:: Initializing {name} application")
 
     def get_name(self):
