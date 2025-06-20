@@ -24,7 +24,7 @@ from pprint import pformat
 from loguru import logger
 from loguru._defaults import LOGURU_FORMAT
 
-from ailib.cfg_lib import cfg_apps
+from .lib_config import cfg_apps
 
 # Default log settings
 DEF_LOG_LEVEL = "INFO"

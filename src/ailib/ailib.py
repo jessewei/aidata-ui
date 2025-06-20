@@ -1,4 +1,5 @@
 """Common library, AS
+Common library, AS
 
 Modules:
     Description: Common module for AI data lib
@@ -9,8 +10,8 @@ Modules:
 """
 
 import os
-from ailib.cfg_lib import cfg_apps
-from ailib import logger
+from .lib_config import cfg_apps
+from .logger import logger
 
 
 def is_in_container():
