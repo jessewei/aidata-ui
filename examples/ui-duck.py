@@ -28,7 +28,7 @@ def main():
         )
 
         m.env.name = str(updated_values["name"])
-        m.env.age = int(updated_values["age"])
+        m.env.age = int(updated_values["age"])  # type: ignore
         m.env.is_active = bool(updated_values["is_active"])
 
         if m.confirm(
